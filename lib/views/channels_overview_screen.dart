@@ -14,7 +14,7 @@ class _ChannelsOverviewScreenState extends State<ChannelsOverviewScreen> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColors.greenColors,
-          title: Text('YouTube Channels'),
+          title: Text('Video Clips'),
         ),
         body: ListView(
           children: [
@@ -111,7 +111,7 @@ class _ChannelsOverviewScreenState extends State<ChannelsOverviewScreen> {
             MaterialPageRoute(
               builder: (context) {
                 return WebpagesScreen(
-                  title: "YouTube Channel",
+                  title: "Video Clips",
                   url: url,
                 );
               },
