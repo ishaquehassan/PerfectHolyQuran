@@ -10,8 +10,18 @@ class SadqaScreen extends StatefulWidget {
 }
 
 class _SadqaScreenState extends State<SadqaScreen> {
-
-  List<String> gifts = ['2 Copies', '4 Copies', '6 Copies', '8 Copies', '12 Copies', '15 Copies', '20 Copies', '30 Copies', '50 Copies', '100 Copies'];
+  List<String> gifts = [
+    '2 Copies',
+    '4 Copies',
+    '6 Copies',
+    '8 Copies',
+    '12 Copies',
+    '15 Copies',
+    '20 Copies',
+    '30 Copies',
+    '50 Copies',
+    '100 Copies'
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -26,16 +36,18 @@ class _SadqaScreenState extends State<SadqaScreen> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-            SizedBox(height: 30,),
-
+            SizedBox(
+              height: 30,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Text("Your Purchased Gifts", style: TextStyle(fontSize: 16, color: Colors.black),),
-
+                  Text(
+                    "Your Purchased Gifts",
+                    style: TextStyle(fontSize: 16, color: Colors.black),
+                  ),
                   Container(
                     height: 40,
                     width: 40,
@@ -43,16 +55,18 @@ class _SadqaScreenState extends State<SadqaScreen> {
                       borderRadius: BorderRadius.circular(15),
                       color: AppColors.greenColors,
                     ),
-
-                    child: Center(child: Text("0", style: TextStyle(fontSize: 16, color: Colors.white),)),
+                    child: Center(
+                        child: Text(
+                      "0",
+                      style: TextStyle(fontSize: 16, color: Colors.white),
+                    )),
                   ),
-
                 ],
               ),
             ),
-
-            SizedBox(height: 20,),
-
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 10),
               child: GridView.builder(
@@ -60,24 +74,24 @@ class _SadqaScreenState extends State<SadqaScreen> {
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, crossAxisSpacing: 10, mainAxisSpacing: 10),
+                      crossAxisCount: 3,
+                      crossAxisSpacing: 10,
+                      mainAxisSpacing: 10),
                   itemBuilder: (BuildContext context, int index) {
-
                     return InkWell(
                       onTap: () {
-                     // Navigator.push(context, MaterialPageRoute(builder: (context) {return PaymentScreen();}));
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (BuildContext context) => PaypalPayment(
-                              onFinish: (number) async {
-
-                                // payment done
-                                print('order id: '+number);
-
-                              },
-                            ),
-                          ),
-                        );
+                        // Navigator.push(context, MaterialPageRoute(builder: (context) {return PaymentScreen();}));
+                        // Navigator.of(context).push(
+                        //   MaterialPageRoute(
+                        //     builder: (BuildContext context) => PaypalPayment(
+                        //       onFinish: (number) async {
+                        //         // payment done
+                        //         print('order id: ' + number);
+                        //         return number;
+                        //       },
+                        //     ),
+                        //   ),
+                        // );
                       },
                       child: Container(
                         decoration: BoxDecoration(
@@ -88,45 +102,57 @@ class _SadqaScreenState extends State<SadqaScreen> {
                               color: Colors.grey.withOpacity(0.5),
                               spreadRadius: 1,
                               blurRadius: 10,
-                              offset: Offset(
-                                  0, 3), // changes position of shadow
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
                             ),
                           ],
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Image.asset("assets/quranRail.png", height: 60, width: 60,),
-                            SizedBox(height: 10,),
-                            Text(gifts[index],
+                            Image.asset(
+                              "assets/quranRail.png",
+                              height: 60,
+                              width: 60,
+                            ),
+                            SizedBox(
+                              height: 10,
+                            ),
+                            Text(
+                              gifts[index],
                               style: TextStyle(
                                 fontSize: 12,
                                 color: AppColors.greenColors,
-                              ),),
+                              ),
+                            ),
                           ],
                         ),
                       ),
                     );
-                  }
-
-              ),
+                  }),
             ),
-
-            SizedBox(height: 20,),
-
+            SizedBox(
+              height: 20,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
-              child: Text("Gift Info", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),),
+              child: Text(
+                "Gift Info",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-
-            SizedBox(height: 10,),
-
+            SizedBox(
+              height: 10,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 "You can purchase and gift these copies as 'Hadiya' "
-                    "to users of our app (randomly selected) to earn ajar."
-                    "You can distribute gifts to your friend and family.",
+                "to users of our app (randomly selected) to earn ajar."
+                "You can distribute gifts to your friend and family.",
                 softWrap: false,
                 overflow: TextOverflow.ellipsis,
                 maxLines: 6,
@@ -136,8 +162,9 @@ class _SadqaScreenState extends State<SadqaScreen> {
                 ),
               ),
             ),
-
-            SizedBox(height: 10,),
+            SizedBox(
+              height: 10,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Divider(
@@ -145,16 +172,22 @@ class _SadqaScreenState extends State<SadqaScreen> {
                 color: AppColors.greenColors,
               ),
             ),
-
-            SizedBox(height: 10,),
-
+            SizedBox(
+              height: 10,
+            ),
             Padding(
               padding: const EdgeInsets.only(left: 20),
-              child: Text("How It Works?", style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold),),
+              child: Text(
+                "How It Works?",
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold),
+              ),
             ),
-
-            SizedBox(height: 10,),
-
+            SizedBox(
+              height: 10,
+            ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
@@ -168,8 +201,9 @@ class _SadqaScreenState extends State<SadqaScreen> {
                 ),
               ),
             ),
-
-            SizedBox(height: 30,),
+            SizedBox(
+              height: 30,
+            ),
           ],
         ),
       ),

@@ -612,17 +612,20 @@ class _HomeScreenState extends State<HomeScreen> {
                           // right: 20,
                           bottom: getScreenHeight(-30),
                           child: Container(
-                            margin: EdgeInsets.symmetric(
-                                horizontal:
-                                    MediaQuery.of(context).size.width * 0.03),
+                            alignment: Alignment.centerLeft,
+                            margin: EdgeInsets.only(left: 10, right: 5),
+                            // margin: EdgeInsets.symmetric(
+                            //     horizontal:
+                            //         MediaQuery.of(context).size.width * 0.01),
                             height: getScreenHeight(60),
                             decoration: kDefaultBoxShadow,
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 Container(
+                                  // alignment: Alignment.center,
                                   width:
-                                      MediaQuery.of(context).size.width * 0.47,
+                                      MediaQuery.of(context).size.width * 0.5,
                                   // padding:
                                   //     EdgeInsets.symmetric(vertical: 20),
                                   //"1 Ramadan 1442 AH"
@@ -685,6 +688,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               Expanded(
                 child: Container(
+                  // alignment: Alignment.center,
+                  margin: EdgeInsets.only(left: 5, right: 5),
                   child: ListView(
                     children: [
                       // SizedBox(
